@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+
+html,
+body,
+#grid-container-home {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw
+}
+
+body {
+    background-color: #f2f0ef;
+}
+
+#grid-container-home {
+    display: grid;
+    grid-template-columns: 3% 94% 3%;
+    grid-template-rows: 200px 120px 1fr 150px;
+    grid-template-areas: "header header header" "borderleft nav borderright" "borderleft main borderright" "borderleft foot borderright";
+}
+
+div#leftborders {
+    grid-area: borderleft;
+}
+
+div#rightborders {
+    grid-area: borderright;
+}
+
+header {
+    grid-area: header;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/007/633/584/original/hand-drawn-vine-plant-in-light-green-on-a-dark-background-seamless-pattern-of-leaves-in-layers-with-shadows-in-a-floral-nature-design-free-vector.jpg');
+    background-size: cover;
+    border-bottom-left-radius: 50% 25px;
+    border-bottom-right-radius: 50% 25px;
+    text-align: center;
+}
+
+#company-name {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5em;
+    color: #f2f0ef;
+    text-shadow: 5px 5px 7px black;
+    margin: 25px 0 0 0;
+    letter-spacing: 8px;
+}
+
+#slogan {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5em;
+    color: #f2f0ef;
+    text-shadow: 3px 3px 4px black;
+    display: inline-block;
+    margin: 10px;
+}
+
+nav {
+    margin: 20px 0;
+    grid-area: nav;
+    background-color: #6E8C56;
+    border-radius: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    font-family: 'Times New Roman', Times, serif;
+    display: inline-block;
+    padding: 25px 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #f2f0ef;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    background-position: -100% 0;
+    color: #6E8C56;
+    background-image: linear-gradient(to right, #6E8C56, #6E8C56, #f2f0ef, #f2f0ef);
+    background-size: 200% 100%;
+    transition: background-position 0.5s ease;
+}
+
+nav a.active {
+    border-bottom: 2px solid #f2f0ef;
+    border-top: 2px solid #f2f0ef;
+}
+
+nav a.active:hover {
+    border-bottom: 3px solid #fff;
+    border-bottom: none;
+}
+
+main {
+    padding: 40px 0;
+    grid-area: main;
+    border: 2px solid #6E8C56;
+    margin-bottom: 20px;
+}
+
+article.hoofdpagina p {
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    padding: 0 40px;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+article#portret img {
+    margin: 0 40px 20px 40px;
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    float: left;
+}
+
+article.hoofdpagina img {
+    margin: 20px 40px 20px 40px;
+    width: 120px;
+    height: 120px;
+    border: 1px solid black;
+    float: right;
+}
+
+article.hoofdpagina h1 {
+    margin: 40px 20px 20px 40px;
+    text-decoration: underline;
+    font-size: 1.5em;
+}
+
+hr {
+    margin: 40px;
+    border: 2px solid #ddd;
+}
+
+table {
+    width: calc(100% - 80px);
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 40px;
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+th {
+    background-color: #6E8C56;
+    color: white;
+    font-weight: bold;
+    border-right: 1px solid #fff;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+tr:first-child th {
+    border-bottom: 2px solid #fff;
+}
+
+td:first-child {
+    font-weight: bold;
+}
+
+div.chatbox img {
+    margin-right: 20px;
+    position: fixed;
+    top: 7%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 75px;
+    height: auto;
+    box-shadow: 0 0 10px rgba(67, 83, 52, 0.5);
+    border-radius: 50%;
+    transition: box-shadow 0.3s ease;
+}
+
+div.chatbox img:hover {
+    box-shadow: 0 0 40px rgba(67, 83, 52, 1);
+
+}
+
+#knop {
+    border: none;
+    width: 32px;
+    height: 32px;
+    background-color: #eee;
+    transition: all ease-in-out 0.2s;
+    cursor: pointer;
+}
+
+#knop:hover {
+    border: 1px solid #888;
+    background-color: #ddd;
+}
+
+footer {
+    margin: 0;
+    grid-area: foot;
+    padding-left: 25px;
+    background-color: #6E8C56;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+footer p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #f2f0ef;
+}
+
+footer img {
+    height: 100px;
+    width: auto;
+    float: right;
+    margin: 20px;
+}
+
+p#copyright {
+    margin: 30px 0;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+p#disclaimer {
+    font-style: italic;
+}
+
+.item {
+    border: 2px solid black;
+    background-color: #a3b57f;
+    margin: 25px 35px;
+    position: relative;
+}
+
+.item img {
+    height: 200px;
+    padding: 15px 15px 15px 15px;
+    border-radius: 10%;
+}
+
+.item h1 {
+    font-size: 1.3em;
+    font-style: bold;
+    margin: 0 15px 5px 15px;
+    font-family: 'Playfair Display', serif;
+
+}
+
+.item h2 {
+    font-size: 1em;
+    font-style: italic;
+    color: #333333;
+    margin: 0 15px 5px 15px;
+}
+
+.item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.zorg {
+    display: flex;
+    justify-content: space-between;
+}
+
+.zorg p {
+    margin: 10px 15px;
+}
+
+.price {
+    position: absolute;
+    display: inline-block;
+    background-color: red;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0;
+    top: 30px;
+    right: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+.sun {
+    display: inline-block;
+    margin-left: 15px;
+    color: yellow;
+    text-align: left;
+}
+
+.water {
+    display: inline-block;
+    margin-right: 15px;
+    text-align: right;
+}
+
+.item hr {
+    margin: 0 15px;
+}
+
+#goederen {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+main#bestelpagina {
+    border: none;
+    padding: 0;
+}
+
+form {
+    background-color: #6E8C56;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    color:white;
+}
+
+fieldset {
+    max-width: 800px;
+    margin: 20px auto;
+    border: 1px solid #f2f0ef;
+    background-color: #a3b57f;
+    padding: 40px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+legend {
+    font-size: 1.5em;
+    margin: 0 auto;
+    padding: 5px 20px;
+    font-weight: bold;
+    background-color: #475B2A;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+}
+
+input[type="text"], input[type="email"] {
+    padding: 5px;
+    margin: 0 0 15px 0;
+    box-sizing: border-box;
+    width: calc(50% - 10px);
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#bestelformulier h1 {
+    font-size: 1.2em;
+    text-decoration: underline;
+    padding-bottom: 10px;
+}
+
+#geslacht {
+    display: block;
+    width: calc(100% - 50px);
+    margin-bottom: 15px;
+}
+
+#personalia, #adresgegevens, #bestelgegevens {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#nummers {
+    width: calc(50% - 10px);
+    display: flex;
+    justify-content: space-between;
+}
