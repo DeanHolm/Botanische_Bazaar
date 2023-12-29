@@ -357,13 +357,18 @@ legend {
     border-radius: 3px;
 }
 
-input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+input[type="text"], input[type="email"], input[type="tel"], textarea, select, input[type="number"] {
     padding: 5px;
     margin: 0 0 15px 0;
     box-sizing: border-box;
     width: calc(50% - 10px);
     border-radius: 3px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+input[type="number"] {
+    width: 50px;
+    text-align: center;
 }
 
 #bestelformulier h1 {
@@ -396,13 +401,52 @@ input[type="text"], input[type="email"], input[type="tel"], textarea, select {
     justify-content: space-between;
 }
 
-#plant, #aantal {
-    display: block;
+.plant {
+    display: inline-block;
     width: calc(50% - 10px);
 }
 
-input[type="submit"],
-input[type="reset"] {
+.aantal{
+    display: inline-block;
+}
+
+#addPlantButton {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    background-color: #6E8C56;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border: none
+}
+
+#addPlantButton:hover {
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+.added-section button {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    background-color: #f44336;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border: none;
+}
+
+.added-section button:hover {
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+input[type="submit"], input[type="reset"] {
     background-color: #4caf50;
     color: #fff;
     padding: 10px 15px;
@@ -435,6 +479,7 @@ textarea, select {
 }
 
 p#belangrijk {
-    color: red;
+    color: #f44336;
     font-style: italic;
 }
+
