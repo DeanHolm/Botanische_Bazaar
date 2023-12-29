@@ -86,17 +86,17 @@ nav a {
     text-transform: uppercase;
 }
 
+nav a.active {
+    border-bottom: 2px solid #f2f0ef;
+    border-top: 2px solid #f2f0ef;
+}
+
 nav a:hover {
     background-position: -100% 0;
     color: #6E8C56;
     background-image: linear-gradient(to right, #6E8C56, #6E8C56, #f2f0ef, #f2f0ef);
     background-size: 200% 100%;
     transition: background-position 0.5s ease;
-}
-
-nav a.active {
-    border-bottom: 2px solid #f2f0ef;
-    border-top: 2px solid #f2f0ef;
 }
 
 nav a.active:hover {
@@ -330,7 +330,7 @@ main#bestelpagina {
 
 form {
     background-color: #6E8C56;
-    border-radius: 8px;
+    border-radius: 20px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     font-family: Montserrat, Arial, Helvetica, sans-serif;
@@ -338,7 +338,7 @@ form {
 }
 
 fieldset {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 20px auto;
     border: 1px solid #f2f0ef;
     background-color: #a3b57f;
@@ -357,7 +357,7 @@ legend {
     border-radius: 3px;
 }
 
-input[type="text"], input[type="email"] {
+input[type="text"], input[type="email"], input[type="tel"], textarea, select {
     padding: 5px;
     margin: 0 0 15px 0;
     box-sizing: border-box;
@@ -372,9 +372,15 @@ input[type="text"], input[type="email"] {
     padding-bottom: 10px;
 }
 
-#geslacht {
+#geslacht, #plant, #boodschap1{
     display: block;
     width: calc(100% - 50px);
+    margin-bottom: 15px;
+}
+
+#boodschap2 {
+    display: block;
+    width: 100%;
     margin-bottom: 15px;
 }
 
@@ -388,4 +394,47 @@ input[type="text"], input[type="email"] {
     width: calc(50% - 10px);
     display: flex;
     justify-content: space-between;
+}
+
+#plant, #aantal {
+    display: block;
+    width: calc(50% - 10px);
+}
+
+input[type="submit"],
+input[type="reset"] {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+input[type="reset"] {
+    background-color: #f44336;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+    transition: box-shadow 0.3s ease;
+}
+
+input[type="reset"]:hover {
+    background-color: #d32215;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+    transition: box-shadow 0.3s ease;
+}
+
+textarea, select {
+    font-family: Montserrat;
+}
+
+p#belangrijk {
+    color: red;
+    font-style: italic;
 }

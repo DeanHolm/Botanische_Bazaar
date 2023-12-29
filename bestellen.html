@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/mainstyle.css">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
-    <link rel="javascript" href="js/javascript.js">
+    <script src="js/javascript.js"></script>
     <title>Botanische Bazaar - Webshop</title>
 </head>
 
@@ -33,6 +33,9 @@
                 autocomplete="on">
                 <fieldset title="Bestelformulier">
                     <legend>Bestelformulier</legend>
+                    <p>Om een bestelling te plaatsen, kan u het onderstaande formulier invullen. Van zodra wij uw bestelling hebben ontvangen, nemen wij zo snel mogelijk
+                    met u contact op om afspraken te maken over de levering.</p>
+                    <p id="belangrijk"><strong>Velden met * vul je verplicht in.</strong></p>
                     <h1>Persoonlijke gegevens</h1>
                     <div id="personalia">
                         <div id="geslacht">
@@ -43,7 +46,7 @@
                         </div>
                         <input type="text" name="voornaam" value="" placeholder="Voornaam*" required>
                         <input type="text" name="achternaam" value="" placeholder="Achternaam*" required>
-                        <input type="text" name="telefoonnummer" value="" placeholder="Telefoonnummer*" required>
+                        <input type="tel" name="telefoonnummer" value="" placeholder="Telefoonnummer*" required>
                         <input type="email" name="emailadres" value="" placeholder="E-mailadres*" required>
                     </div>
                     <h1>Adresgegevens</h1>
@@ -95,17 +98,17 @@
                                 </optgroup>
                             </select>
                         </div>
-                        <div id="plant">
+                        <div id="aantal">
                             <label for="aantal">Aantal: </label>
-                            <input type="number" min="1" max="10">
+                            <input name="aantal" type="number" min="1" max="10">
                         </div>
-                        <label for="opmerkingen">Noteer hier uw eventuele opmerkingen en/of vragen: </label><br>
-                        <textarea name="opmerkingen" id="" cols="20" rows="5"></textarea>
+                        <label id="boodschap1" for="opmerkingen">Noteer hier uw eventuele opmerkingen en/of vragen:
+                        </label>
+                        <textarea id="boodschap2" name="opmerkingen" id="" cols="20" rows="5"
+                            placeholder="Vul hier uw boodschap in."></textarea>
                     </div>
-                    <div id="knoppen">
-                        <input type="submit" value="Bestelling plaatsen">
-                        <input type="reset" value="Reset">
-                    </div>
+                    <input type="submit" value="Bestelling plaatsen">
+                    <input type="reset" value="Reset">
                 </fieldset>
             </form>
         </main>
