@@ -6,8 +6,7 @@ body,
 #grid-container-home {
     margin: 0;
     padding: 0;
-    height: 100vh;
-    width: 100vw
+    min-height: 100vh;
 }
 
 body {
@@ -16,9 +15,9 @@ body {
 
 #grid-container-home {
     display: grid;
-    grid-template-columns: 3% 94% 3%;
+    grid-template-columns: 1fr 1300px 1fr;
     grid-template-rows: 200px 120px 1fr auto;
-    grid-template-areas: "header header header" "borderleft nav borderright" "borderleft main borderright" "borderleft foot borderright";
+    grid-template-areas: "header header header" "borderleft nav borderright" "borderleft main borderright" "foot foot foot";
 }
 
 div#leftborders {
@@ -32,9 +31,7 @@ div#rightborders {
 header {
     grid-area: header;
     background-image: url('https://static.vecteezy.com/system/resources/previews/007/633/584/original/hand-drawn-vine-plant-in-light-green-on-a-dark-background-seamless-pattern-of-leaves-in-layers-with-shadows-in-a-floral-nature-design-free-vector.jpg');
-    background-size: cover;
-    border-bottom-left-radius: 50% 25px;
-    border-bottom-right-radius: 50% 25px;
+    background-size: 75%;
     text-align: center;
 }
 
@@ -247,23 +244,23 @@ div.chatbox img:hover {
 footer {
     margin: 0;
     grid-area: foot;
-    padding-left: 25px;
+    /* padding-left: 25px; */
     background-color: #6E8C56;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
     align-self: end;
 }
 
 footer#footgrid {
     display: grid;
     height: auto;
-    grid-template-columns: auto 175px;
+    justify-content: center;
+    grid-template-columns: 1125px 175px;
     grid-template-areas: "text logo";
 }
 
 footer p {
     font-family: Arial, Helvetica, sans-serif;
     color: #f2f0ef;
+    padding-left: 20px;
 }
 
 footer img {
@@ -271,7 +268,6 @@ footer img {
     width: 150px;
     align-self: center;
     justify-self: end;
-    margin-right: 20px;
 }
 
 p#copyright {
@@ -302,7 +298,7 @@ p#disclaimer {
 }
 
 .item img {
-    height: 200px;
+    height: 225px;
     padding: 15px 15px 15px 15px;
     border-radius: 10%;
 }
@@ -380,7 +376,7 @@ section#toelichting p span.water {
 #goederen {
     display: flex;
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: space-evenly;
     align-items: stretch;
     margin-right: 40px;
 }
@@ -392,7 +388,7 @@ main#bestelpagina {
 
 #bestelformulier {
     background-image: url('https://static.vecteezy.com/system/resources/previews/007/633/584/original/hand-drawn-vine-plant-in-light-green-on-a-dark-background-seamless-pattern-of-leaves-in-layers-with-shadows-in-a-floral-nature-design-free-vector.jpg');
-    background-size: cover;
+    background-size: 75%;
 }
 
 form {
@@ -599,3 +595,20 @@ aside#filters hr {
         display: block;
     }
 }
+
+@media screen and (max-width: 1400px) {
+    #grid-container-home {
+        display: grid;
+        grid-template-columns: 3% 94% 3%;
+        grid-template-rows: 200px 120px 1fr auto;
+        grid-template-areas: "header header header" "borderleft nav borderright" "borderleft main borderright" "foot foot foot";
+    }
+
+    footer#footgrid {
+        display: grid;
+        height: auto;
+        grid-template-columns: calc(94% - 175px) 175px;
+        grid-template-areas: "text logo";
+    }
+}
+
