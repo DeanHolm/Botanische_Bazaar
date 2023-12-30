@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/mainstyle.css">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="js/javascript.js"></script>
     <title>Botanische Bazaar - Webshop</title>
 </head>
@@ -28,304 +29,322 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-        <main>
-            <div id="filter">
-                <div>
-                    <label for="checkboxLZP">Luchtzuiverende planten</label>
-                    <input type="checkbox" id="checkboxLZP" checked>
-                    <label for="checkboxVP">Vetplanten</label>
-                    <input type="checkbox" id="checkboxVP" checked>
-                    <label for="checkboxHP">Hangplanten</label>
-                    <input type="checkbox" id="checkboxHP" checked>
-                    <label for="checkboxGBP">Grote bladplanten</label>
-                    <input type="checkbox" id="checkboxGBP" checked>
-                </div>
-                <div>
-                    <label for="radioNone">Geen specifieke vereisten</label>
-                    <input type="radio" name="S" id="radioNone" checked>
-                    <label for="radioLS">Weinig</label>
-                    <input type="radio" name="S" id="radioLS">
-                    <label for="radioMS">Normaal</label>
-                    <input type="radio" name="S" id="radioMS">
-                    <label for="radioHS">Veel</label>
-                    <input type="radio" name="S" id="radioHS">
-                </div>
-                <div>
-                    <label for="radioNone">Geen specifieke vereisten</label>
-                    <input type="radio" name="W" id="radioNone" checked>
-                    <label for="radioLW">Weinig</label>
-                    <input type="radio" name="W" id="radioLW">
-                    <label for="radioMW">Normaal</label>
-                    <input type="radio" name="W" id="radioMW">
-                    <label for="radioHW">Veel</label>
-                    <input type="radio" name="W" id="radioHW">
-                </div>
-            </div>          
-            <div id="goederen">
-                <div class="item LZP MS MW">
-                    <img src="images/luchtzuiverende_planten/Areca_Palm _Desktop-min.jpg" alt="Goudpalm">
-                    <p class="price">&euro;12,99</p>
-                    <h1>Goudpalm</h1>
-                    <h2>Dypsis lutescens</h2>
-                    <hr>
-                    <div class="zorg">
-                        <p class="sun">&#9728; &#9728; &#9728;</p>
-                        <p class="water">&#128167;&#128167;&#128167;</p>
+        <main id="webshop">
+            <div>
+                <section id="toelichting">
+                    <p>Hieronder kan u alle planten terugvinden die wij verkopen. Om de plant te vinden die voldoet aan al uw verwachtingen, kan u met behulp
+                    van de filters planten gaan zoeken. Er kan gefilterd worden op plantencategorie, lichtbehoefte en waterbehoefte.
+                    </p>
+                    <p>De <span class="sun">&#9728;</span> geven weer hoeveel licht de plant nodig heeft. Hoe meer zonnetjes, hoe hoger de lichtbehoefte.
+                    Hierbij komen drie zonnetjes overeen met een normale lichtbehoefte.</p>
+                    <p>De <span class="water">&#128167;</span> geven weer hoeveel water de plant nodig heeft. Hoe meer druppels, hoe hoger de waterbehoefte.
+                    Drie waterdruppels komen overeen met een wekelijkse waterbehoefte.</p>
+                </section>
+                <section id="grid">
+                    <aside id="filters">
+                        <div id="filterlijst">
+                            <div>
+                                <h1>Plantencategorie</h1>
+                                <input type="checkbox" id="checkboxLZP" checked>
+                                <label for="checkboxLZP">Luchtzuiverende planten</label><br>
+                                <input type="checkbox" id="checkboxVP" checked>
+                                <label for="checkboxVP">Vetplanten</label><br>
+                                <input type="checkbox" id="checkboxHP" checked>
+                                <label for="checkboxHP">Hangplanten</label><br>
+                                <input type="checkbox" id="checkboxGBP" checked>
+                                <label for="checkboxGBP">Grote bladplanten</label><br>
+                            </div><hr>
+                            <div>
+                                <h1>Lichtbehoefte</h1>
+                                <input type="radio" name="S" id="radioNone" checked>
+                                <label for="radioNone">Geen specifieke vereisten</label><br>
+                                <input type="radio" name="S" id="radioLS">
+                                <label for="radioLS">Weinig</label><br>
+                                <input type="radio" name="S" id="radioMS">
+                                <label for="radioMS">Normaal</label><br>
+                                <input type="radio" name="S" id="radioHS">
+                                <label for="radioHS">Veel</label><br>
+                            </div><hr>
+                            <div>
+                                <h1>Waterbehoefte</h1>
+                                <input type="radio" name="W" id="radioNone" checked>
+                                <label for="radioNone">Geen specifieke vereisten</label><br>
+                                <input type="radio" name="W" id="radioLW">
+                                <label for="radioLW">Weinig</label><br>
+                                <input type="radio" name="W" id="radioMW">
+                                <label for="radioMW">Normaal</label><br>
+                                <input type="radio" name="W" id="radioHW">
+                                <label for="radioHW">Veel</label><br>
+                            </div>
+                        </div>
+                    </aside>
+                    <div id="goederen">
+                        <div class="item" soort="LZP" light="MS" water="MW">
+                            <img src="images/luchtzuiverende_planten/Areca_Palm _Desktop-min.jpg" alt="Goudpalm">
+                            <p class="price">&euro;12,99</p>
+                            <h1>Goudpalm</h1>
+                            <h2>Dypsis lutescens</h2>
+                            <hr>
+                            <div class="zorg">
+                                <p class="sun">&#9728; &#9728; &#9728;</p>
+                                <p class="water">&#128167;&#128167;&#128167;</p>
+                            </div>
+                        </div>
+                        <div class="item" soort="LZP" light="LS" water="LW">
+                            <img src="images/luchtzuiverende_planten/Sansevieria_Desktop-min.jpg" alt="Sansevieria">
+                            <p class="price">&euro;10,49</p>
+                            <h1>Sansevieria</h1>
+                            <h2>Asparagaceae</h2>
+                            <hr>
+                            <div class="zorg">
+                                <p class="sun">&#9728; &#9728;</p>
+                                <p class="water">&#128167;&#128167;</p>
+                            </div>
+                        </div>
+                        <div class="item" soort="LZP" light="LS" water="MW">
+                            <img src="images/luchtzuiverende_planten/Spider_Plant_Desktop-min.jpg" alt="Graslelie">
+                            <p class="price">&euro;11,99</p>
+                            <h1>Graslelie</h1>
+                            <h2>Chlorophytum comosum</h2>
+                            <hr>
+                            <div class="zorg">
+                                <p class="sun">&#9728; &#9728;</p>
+                                <p class="water">&#128167;&#128167;&#128167;</p>
+                            </div>
+                        </div>
+                        <div class="item" soort="LZP" light="LS" water="HW">
+                            <img src="images/luchtzuiverende_planten/Peace_Lily_Desktop-min.jpg" alt="Lepelplant">
+                            <p class="price">&euro;9,99</p>
+                            <h1>Lepelplant</h1>
+                            <h2>Spathiphyllum</h2>
+                            <hr>
+                            <div class="zorg">
+                                <p class="sun">&#9728; &#9728;</p>
+                                <p class="water">&#128167;&#128167;&#128167;&#128167;</p>
+                            </div>
+                        </div>
+                        <div class="item" soort="LZP" light="HS" water="LW">
+                            <img src="images/luchtzuiverende_planten/Aloe_Vera_Desktop-min.jpg" alt="Aloë vera">
+                            <p class="price">&euro;7,99</p>
+                            <h1>Aloë Vera</h1>
+                            <h2>Asphodelaceae</h2>
+                            <hr>
+                            <div class="zorg">
+                                <p class="sun">&#9728; &#9728; &#9728; &#9728;</p>
+                                <p class="water">&#128167;&#128167;</p>
+                            </div>
+                        </div>
+                        <div class="item" soort="LZP" light="MS" water="MW">
+                            <img src="images/luchtzuiverende_planten/Rubber_Plant_Desktop-min.jpg" alt="Rubberplant">
+                            <p class="price">&euro;14,49</p>
+                            <h1>Rubberplant</h1>
+                            <h2>Ficus elastica</h2>
+                            <hr>
+                            <div class="zorg">
+                                <p class="sun">&#9728; &#9728; &#9728;</p>
+                                <p class="water">&#128167;&#128167;&#128167;</p>
+                            </div>
+                        </div>
+                        <div class="item" soort="VP" light="HS" water="MW">
+                            <img src="images/vetplanten/Kalanchoe_Desktop-min.jpg" alt="Kalanchoë">
+                            <p class="price">&euro;6,99</p>
+                            <h1>Kalanchoë</h1>
+                            <h2>Crassulaceae</h2>
+                            <hr>
+                            <div class="zorg">
+                                <p class="sun">&#9728; &#9728; &#9728; &#9728;</p>
+                                <p class="water">&#128167;&#128167;&#128167;</p>
+                            </div>
+                        </div>
+                        <div class="item" soort="VP" light="HS" water="LW">
+                            <img src="images/vetplanten/Echeveria_Desktop-min.jpg" alt="Echeveria">
+                            <p class="price">&euro;6,49</p>
+                            <h1>Echeveria</h1>
+                            <h2>Crassulaceae</h2>
+                            <hr>
+                            <div class="zorg">
+                                <p class="sun">&#9728; &#9728; &#9728; &#9728;</p>
+                                <p class="water">&#128167;&#128167;</p>
+                            </div>
+                        </div>
+                        <div class="item" soort="VP" light="HS" water="LW">
+                            <img src="images/vetplanten/Sedum_Desktop-min.jpg" alt="Vetkruid">
+                            <p class="price">&euro;4,99</p>
+                            <h1>Vetkruid</h1>
+                            <h2>Sedum dasyphyllum</h2>
+                            <hr>
+                            <div class="zorg">
+                                <p class="sun">&#9728; &#9728; &#9728; &#9728; &#9728;</p>
+                                <p class="water">&#128167;&#128167;</p>
+                            </div>
+                        </div>
+                        <div class="item" soort="VP" light="HS" water="MW">
+                            <img src="images/vetplanten/Jadeplant_Desktop-min.jpg" alt="Jadeplant">
+                            <p class="price">&euro;8,49</p>
+                            <h1>Jadeplant</h1>
+                            <h2>Crassula ovata</h2>
+                            <hr>
+                            <div class="zorg">
+                                <p class="sun">&#9728; &#9728; &#9728; &#9728;</p>
+                                <p class="water">&#128167;&#128167;</p>
+                            </div>
+                        </div>
+                        <div class="item" soort="VP" light="HS" water="LW">
+                            <img src="images/vetplanten/Haworthia_Desktop-min.jpg" alt="Zebraplant">
+                            <p class="price">&euro;9,49</p>
+                            <h1>Zebraplant</h1>
+                            <h2>Haworthia Fasciata</h2>
+                            <hr>
+                            <div class="zorg">
+                                <p class="sun">&#9728; &#9728; &#9728;</p>
+                                <p class="water">&#128167;&#128167;</p>
+                            </div>
+                        </div>
+                        <div class="item" soort="VP" light="HS" water="LW">
+                            <img src="images/vetplanten/Sempervivum_Desktop-min.jpg" alt="Sempervivum">
+                            <p class="price">&euro;7,99</p>
+                            <h1>Sempervivum</h1>
+                            <h2>Crassulaceae</h2>
+                            <hr>
+                            <div class="zorg">
+                                <p class="sun">&#9728; &#9728; &#9728; &#9728;</p>
+                                <p class="water">&#128167;&#128167;</p>
+                            </div>
+                        </div>
+                        <div class="item" soort="HP" light="MS" water="HW">
+                            <img src="images\hangplanten\Chenilleplant_Desktop-min.jpg" alt="Chenilleplant">
+                            <p class="price">&euro;13,99</p>
+                            <h1>Chenilleplant</h1>
+                            <h2>Acalypha hispida</h2>
+                            <hr>
+                            <div class="zorg">
+                                <p class="sun">&#9728; &#9728; &#9728;</p>
+                                <p class="water">&#128167;&#128167;&#128167;&#128167;</p>
+                            </div>
+                        </div>
+                        <div class="item" soort="HP" light="HS" water="LW">
+                            <img src="images\hangplanten\Erwtenplant_Desktop-min.jpg" alt="Erwtenplant">
+                            <p class="price">&euro;8,49</p>
+                            <h1>Erwtenplant</h1>
+                            <h2>Senecio rowleyanus</h2>
+                            <hr>
+                            <div class="zorg">
+                                <p class="sun">&#9728; &#9728; &#9728; &#9728;</p>
+                                <p class="water">&#128167;&#128167;</p>
+                            </div>
+                        </div>
+                        <div class="item" soort="HP" light="LS" water="MW">
+                            <img src="images\hangplanten\Drakenklimop_Desktop-min.jpg" alt="Drakenklimop">
+                            <p class="price">&euro;11,49</p>
+                            <h1>Drakenklimop</h1>
+                            <h2>Epipremnum aureum</h2>
+                            <hr>
+                            <div class="zorg">
+                                <p class="sun">&#9728; &#9728;</p>
+                                <p class="water">&#128167;&#128167;&#128167;</p>
+                            </div>
+                        </div>
+                        <div class="item" soort="HP" light="LS" water="HW">
+                            <img src="images\hangplanten\Krulvaren_Desktop-min.jpg" alt="Krulvaren">
+                            <p class="price">&euro;10,49</p>
+                            <h1>Krulvaren</h1>
+                            <h2>Nephrolepis exaltata</h2>
+                            <hr>
+                            <div class="zorg">
+                                <p class="sun">&#9728; &#9728;</p>
+                                <p class="water">&#128167;&#128167;&#128167;&#128167;</p>
+                            </div>
+                        </div>
+                        <div class="item" soort="HP" light="MS" water="MW">
+                            <img src="images\hangplanten\Schaamrood_Desktop-min.jpg" alt="Schaamrood">
+                            <p class="price">&euro;6,49</p>
+                            <h1>Schaamrood</h1>
+                            <h2>Aeschynanthus</h2>
+                            <hr>
+                            <div class="zorg">
+                                <p class="sun">&#9728; &#9728; &#9728;</p>
+                                <p class="water">&#128167;&#128167;&#128167;</p>
+                            </div>
+                        </div>
+                        <div class="item" soort="HP" light="MS" water="MW">
+                            <img src="images\hangplanten\Vaderplant_Desktop-min.jpg" alt="Vaderplant">
+                            <p class="price">&euro;8,99</p>
+                            <h1>Vaderplant</h1>
+                            <h2>Tradescantia</h2>
+                            <hr>
+                            <div class="zorg">
+                                <p class="sun">&#9728; &#9728; &#9728;</p>
+                                <p class="water">&#128167;&#128167;&#128167;</p>
+                            </div>
+                        </div>
+                        <div class="item" soort="GBP" light="HS" water="HW">
+                            <img src="images\grote_bladplanten\Bananenplant_Desktop-min.jpg" alt="Bananenplant">
+                            <p class="price">&euro;18,99</p>
+                            <h1>Bananenplant</h1>
+                            <h2>Musa Acuminata</h2>
+                            <hr>
+                            <div class="zorg">
+                                <p class="sun">&#9728; &#9728; &#9728; &#9728; &#9728;</p>
+                                <p class="water">&#128167;&#128167;&#128167;&#128167;</p>
+                            </div>
+                        </div>
+                        <div class="item" soort="GBP" light="MS" water="MW">
+                            <img src="images\grote_bladplanten\Monstera_deliciosa_Desktop-min.jpg" alt="Monstera Deliciosa">
+                            <p class="price">&euro;21,99</p>
+                            <h1>Monstera Deliciosa</h1>
+                            <h2>Araceae</h2>
+                            <hr>
+                            <div class="zorg">
+                                <p class="sun">&#9728; &#9728; &#9728;</p>
+                                <p class="water">&#128167;&#128167;&#128167;</p>
+                            </div>
+                        </div>
+                        <div class="item" soort="GBP" light="HS" water="MW">
+                            <img src="images\grote_bladplanten\Bird_Of_Paradise_Desktop-min.jpg" alt="Bird of Paradise">
+                            <p class="price">&euro;17,99</p>
+                            <h1>Bird of Paradise</h1>
+                            <h2>Strelitzia</h2>
+                            <hr>
+                            <div class="zorg">
+                                <p class="sun">&#9728; &#9728; &#9728; &#9728;</p>
+                                <p class="water">&#128167;&#128167;&#128167;</p>
+                            </div>
+                        </div>
+                        <div class="item" soort="GBP" light="HS" water="MW">
+                            <img src="images\grote_bladplanten\Vioolbladplant_Desktop-min.jpg" alt="Vioolbladplant">
+                            <p class="price">&euro;8,99</p>
+                            <h1>Vioolbladplant</h1>
+                            <h2>Ficus lyrata</h2>
+                            <hr>
+                            <div class="zorg">
+                                <p class="sun">&#9728; &#9728; &#9728; &#9728;</p>
+                                <p class="water">&#128167;&#128167;&#128167;</p>
+                            </div>
+                        </div>
+                        <div class="item" soort="GBP" light="HS" water="HW">
+                            <img src="images\grote_bladplanten\Olifantsoor_Desktop-min.jpg" alt="Olifantsoor">
+                            <p class="price">&euro;20,99</p>
+                            <h1>Olifantsoor</h1>
+                            <h2>Alocasia wentii</h2>
+                            <hr>
+                            <div class="zorg">
+                                <p class="sun">&#9728; &#9728; &#9728; &#9728; &#9728;</p>
+                                <p class="water">&#128167;&#128167;&#128167;&#128167;</p>
+                            </div>
+                        </div>
+                        <div class="item" soort="GBP" light="LS" water="LW">
+                            <img src="images\grote_bladplanten\Kamerpalm_Desktop-min.jpg" alt="Kamerpalm">
+                            <p class="price">&euro;14,99</p>
+                            <h1>Kamerpalm</h1>
+                            <h2>Zamioculcas</h2>
+                            <hr>
+                            <div class="zorg">
+                                <p class="sun">&#9728; &#9728;</p>
+                                <p class="water">&#128167;&#128167;</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="item LZP LS LW">
-                    <img src="images/luchtzuiverende_planten/Sansevieria_Desktop-min.jpg" alt="Sansevieria">
-                    <p class="price">&euro;10,49</p>
-                    <h1>Sansevieria</h1>
-                    <h2>Asparagaceae</h2>
-                    <hr>
-                    <div class="zorg">
-                        <p class="sun">&#9728; &#9728;</p>
-                        <p class="water">&#128167;&#128167;</p>
-                    </div>
-                </div>
-                <div class="item LZP LS MW">
-                    <img src="images/luchtzuiverende_planten/Spider_Plant_Desktop-min.jpg" alt="Graslelie">
-                    <p class="price">&euro;11,99</p>
-                    <h1>Graslelie</h1>
-                    <h2>Chlorophytum comosum</h2>
-                    <hr>
-                    <div class="zorg">
-                        <p class="sun">&#9728; &#9728;</p>
-                        <p class="water">&#128167;&#128167;&#128167;</p>
-                    </div>
-                </div>
-                <div class="item LZP LS HW">
-                    <img src="images/luchtzuiverende_planten/Peace_Lily_Desktop-min.jpg" alt="Lepelplant">
-                    <p class="price">&euro;9,99</p>
-                    <h1>Lepelplant</h1>
-                    <h2>Spathiphyllum</h2>
-                    <hr>
-                    <div class="zorg">
-                        <p class="sun">&#9728; &#9728;</p>
-                        <p class="water">&#128167;&#128167;&#128167;&#128167;</p>
-                    </div>
-                </div>
-                <div class="item LZP HS LW">
-                    <img src="images/luchtzuiverende_planten/Aloe_Vera_Desktop-min.jpg" alt="Aloë vera">
-                    <p class="price">&euro;7,99</p>
-                    <h1>Aloë Vera</h1>
-                    <h2>Asphodelaceae</h2>
-                    <hr>
-                    <div class="zorg">
-                        <p class="sun">&#9728; &#9728; &#9728; &#9728;</p>
-                        <p class="water">&#128167;&#128167;</p>
-                    </div>
-                </div>
-                <div class="item LZP MS MW">
-                    <img src="images/luchtzuiverende_planten/Rubber_Plant_Desktop-min.jpg" alt="Rubberplant">
-                    <p class="price">&euro;14,49</p>
-                    <h1>Rubberplant</h1>
-                    <h2>Ficus elastica</h2>
-                    <hr>
-                    <div class="zorg">
-                        <p class="sun">&#9728; &#9728; &#9728;</p>
-                        <p class="water">&#128167;&#128167;&#128167;</p>
-                    </div>
-                </div>
-                <div class="item VP HS MW">
-                    <img src="images/vetplanten/Kalanchoe_Desktop-min.jpg" alt="Kalanchoë">
-                    <p class="price">&euro;6,99</p>
-                    <h1>Kalanchoë</h1>
-                    <h2>Crassulaceae</h2>
-                    <hr>
-                    <div class="zorg">
-                        <p class="sun">&#9728; &#9728; &#9728; &#9728;</p>
-                        <p class="water">&#128167;&#128167;&#128167;</p>
-                    </div>
-                </div>
-                <div class="item VP HS LW">
-                    <img src="images/vetplanten/Echeveria_Desktop-min.jpg" alt="Echeveria">
-                    <p class="price">&euro;6,49</p>
-                    <h1>Echeveria</h1>
-                    <h2>Crassulaceae</h2>
-                    <hr>
-                    <div class="zorg">
-                        <p class="sun">&#9728; &#9728; &#9728; &#9728;</p>
-                        <p class="water">&#128167;&#128167;</p>
-                    </div>
-                </div>
-                <div class="item VP HS LW">
-                    <img src="images/vetplanten/Sedum_Desktop-min.jpg" alt="Vetkruid">
-                    <p class="price">&euro;4,99</p>
-                    <h1>Vetkruid</h1>
-                    <h2>Sedum dasyphyllum</h2>
-                    <hr>
-                    <div class="zorg">
-                        <p class="sun">&#9728; &#9728; &#9728; &#9728; &#9728;</p>
-                        <p class="water">&#128167;&#128167;</p>
-                    </div>
-                </div>
-                <div class="item VP HS LW">
-                    <img src="images/vetplanten/Jadeplant_Desktop-min.jpg" alt="Jadeplant">
-                    <p class="price">&euro;8,49</p>
-                    <h1>Jadeplant</h1>
-                    <h2>Crassula ovata</h2>
-                    <hr>
-                    <div class="zorg">
-                        <p class="sun">&#9728; &#9728; &#9728; &#9728;</p>
-                        <p class="water">&#128167;&#128167;</p>
-                    </div>
-                </div>
-                <div class="item VP MS LW">
-                    <img src="images/vetplanten/Haworthia_Desktop-min.jpg" alt="Zebraplant">
-                    <p class="price">&euro;9,49</p>
-                    <h1>Zebraplant</h1>
-                    <h2>Haworthia Fasciata</h2>
-                    <hr>
-                    <div class="zorg">
-                        <p class="sun">&#9728; &#9728; &#9728;</p>
-                        <p class="water">&#128167;&#128167;</p>
-                    </div>
-                </div>
-                <div class="item VP HS LW">
-                    <img src="images/vetplanten/Sempervivum_Desktop-min.jpg" alt="Sempervivum">
-                    <p class="price">&euro;7,99</p>
-                    <h1>Sempervivum</h1>
-                    <h2>Crassulaceae</h2>
-                    <hr>
-                    <div class="zorg">
-                        <p class="sun">&#9728; &#9728; &#9728; &#9728;</p>
-                        <p class="water">&#128167;&#128167;</p>
-                    </div>
-                </div>
-                <div class="item HP MS HW">
-                    <img src="images\hangplanten\Chenilleplant_Desktop-min.jpg" alt="Chenilleplant">
-                    <p class="price">&euro;13,99</p>
-                    <h1>Chenilleplant</h1>
-                    <h2>Acalypha hispida</h2>
-                    <hr>
-                    <div class="zorg">
-                        <p class="sun">&#9728; &#9728; &#9728;</p>
-                        <p class="water">&#128167;&#128167;&#128167;&#128167;</p>
-                    </div>
-                </div>
-                <div class="item HP HS LW">
-                    <img src="images\hangplanten\Erwtenplant_Desktop-min.jpg" alt="Erwtenplant">
-                    <p class="price">&euro;8,49</p>
-                    <h1>Erwtenplant</h1>
-                    <h2>Senecio rowleyanus</h2>
-                    <hr>
-                    <div class="zorg">
-                        <p class="sun">&#9728; &#9728; &#9728; &#9728;</p>
-                        <p class="water">&#128167;&#128167;</p>
-                    </div>
-                </div>
-                <div class="item HP LS MW">
-                    <img src="images\hangplanten\Drakenklimop_Desktop-min.jpg" alt="Drakenklimop">
-                    <p class="price">&euro;11,49</p>
-                    <h1>Drakenklimop</h1>
-                    <h2>Epipremnum aureum</h2>
-                    <hr>
-                    <div class="zorg">
-                        <p class="sun">&#9728; &#9728;</p>
-                        <p class="water">&#128167;&#128167;&#128167;</p>
-                    </div>
-                </div>
-                <div class="item HP LS HW">
-                    <img src="images\hangplanten\Krulvaren_Desktop-min.jpg" alt="Krulvaren">
-                    <p class="price">&euro;10,49</p>
-                    <h1>Krulvaren</h1>
-                    <h2>Nephrolepis exaltata</h2>
-                    <hr>
-                    <div class="zorg">
-                        <p class="sun">&#9728; &#9728;</p>
-                        <p class="water">&#128167;&#128167;&#128167;&#128167;</p>
-                    </div>
-                </div>
-                <div class="item HP MS MW">
-                    <img src="images\hangplanten\Schaamrood_Desktop-min.jpg" alt="Schaamrood">
-                    <p class="price">&euro;6,49</p>
-                    <h1>Schaamrood</h1>
-                    <h2>Aeschynanthus</h2>
-                    <hr>
-                    <div class="zorg">
-                        <p class="sun">&#9728; &#9728; &#9728;</p>
-                        <p class="water">&#128167;&#128167;&#128167;</p>
-                    </div>
-                </div>
-                <div class="item HP MS MW">
-                    <img src="images\hangplanten\Vaderplant_Desktop-min.jpg" alt="Vaderplant">
-                    <p class="price">&euro;8,99</p>
-                    <h1>Vaderplant</h1>
-                    <h2>Tradescantia</h2>
-                    <hr>
-                    <div class="zorg">
-                        <p class="sun">&#9728; &#9728; &#9728;</p>
-                        <p class="water">&#128167;&#128167;&#128167;</p>
-                    </div>
-                </div>
-                <div class="item GBP HS HW">
-                    <img src="images\grote_bladplanten\Bananenplant_Desktop-min.jpg" alt="Bananenplant">
-                    <p class="price">&euro;18,99</p>
-                    <h1>Bananenplant</h1>
-                    <h2>Musa Acuminata</h2>
-                    <hr>
-                    <div class="zorg">
-                        <p class="sun">&#9728; &#9728; &#9728; &#9728; &#9728;</p>
-                        <p class="water">&#128167;&#128167;&#128167;&#128167;</p>
-                    </div>
-                </div>
-                <div class="item GBP MS MW">
-                    <img src="images\grote_bladplanten\Monstera_deliciosa_Desktop-min.jpg" alt="Monstera Deliciosa">
-                    <p class="price">&euro;21,99</p>
-                    <h1>Monstera Deliciosa</h1>
-                    <h2>Araceae</h2>
-                    <hr>
-                    <div class="zorg">
-                        <p class="sun">&#9728; &#9728; &#9728;</p>
-                        <p class="water">&#128167;&#128167;&#128167;</p>
-                    </div>
-                </div>
-                <div class="item GBP HS MW">
-                    <img src="images\grote_bladplanten\Bird_Of_Paradise_Desktop-min.jpg" alt="Bird of Paradise">
-                    <p class="price">&euro;17,99</p>
-                    <h1>Bird of Paradise</h1>
-                    <h2>Strelitzia</h2>
-                    <hr>
-                    <div class="zorg">
-                        <p class="sun">&#9728; &#9728; &#9728; &#9728;</p>
-                        <p class="water">&#128167;&#128167;&#128167;</p>
-                    </div>
-                </div>
-                <div class="item GBP HS MW">
-                    <img src="images\grote_bladplanten\Vioolbladplant_Desktop-min.jpg" alt="Vioolbladplant">
-                    <p class="price">&euro;8,99</p>
-                    <h1>Vioolbladplant</h1>
-                    <h2>Ficus lyrata</h2>
-                    <hr>
-                    <div class="zorg">
-                        <p class="sun">&#9728; &#9728; &#9728; &#9728;</p>
-                        <p class="water">&#128167;&#128167;&#128167;</p>
-                    </div>
-                </div>
-                <div class="item GBP HS HW">
-                    <img src="images\grote_bladplanten\Olifantsoor_Desktop-min.jpg" alt="Olifantsoor">
-                    <p class="price">&euro;20,99</p>
-                    <h1>Olifantsoor</h1>
-                    <h2>Alocasia wentii</h2>
-                    <hr>
-                    <div class="zorg">
-                        <p class="sun">&#9728; &#9728; &#9728; &#9728; &#9728;</p>
-                        <p class="water">&#128167;&#128167;&#128167;&#128167;</p>
-                    </div>
-                </div>
-                <div class="item GBP LS LW">
-                    <img src="images\grote_bladplanten\Kamerpalm_Desktop-min.jpg" alt="Kamerpalm">
-                    <p class="price">&euro;14,99</p>
-                    <h1>Kamerpalm</h1>
-                    <h2>Zamioculcas</h2>
-                    <hr>
-                    <div class="zorg">
-                        <p class="sun">&#9728; &#9728;</p>
-                        <p class="water">&#128167;&#128167;</p>
-                    </div>
-                </div>
+                </section>
             </div>
             
         </main>

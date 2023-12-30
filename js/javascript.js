@@ -2,6 +2,39 @@
 // Ik begrijp ze wel en heb ook de nodige aanpassingen moeten maken omdat niet alles klopte.
 // Het leek me gewoon een leuke toevoeging aan de website.
 
+
+//Om te kunnen filteren in de shop
+
+$(document).ready(function () {
+    function updateDisplay() {
+        var categoryFilters = $('input[type="checkbox"]:checked').map(function () {
+            return $(this).attr('id').replace('checkbox', '');
+        }).get();
+
+        var lightFilter = $('input[name="S"]:checked').attr('id').replace('radio', '');
+        var waterFilter = $('input[name="W"]:checked').attr('id').replace('radio', '');
+
+        $('.item').hide();
+
+        categoryFilters.forEach(function (category) {
+            $('.item[soort="' + category + '"]').each(function () {
+                var lightAttr = $(this).attr('light');
+                var waterAttr = $(this).attr('water');
+
+                if ((lightFilter === 'None' || lightFilter === lightAttr) &&
+                    (waterFilter === 'None' || waterFilter === waterAttr)) {
+                    $(this).show();
+                }
+            });
+        });
+    }
+    $('input[type="checkbox"]').change(updateDisplay);
+    $('input[type="radio"]').change(updateDisplay);
+});
+
+
+// Om extra planten te kunnen toevoegen aan het bestelformulier
+
 document.addEventListener('DOMContentLoaded', function () {
     const addButton = document.getElementById('addPlantButton');
     const bestelgegevens = document.getElementById('bestelgegevens');
@@ -13,13 +46,22 @@ document.addEventListener('DOMContentLoaded', function () {
         const plantSection = document.querySelector('.plant-section');
         const newPlantSection = plantSection.cloneNode(true);
         newPlantSection.classList.add('added-section');
+        const quantityInput = newPlantSection.querySelector('input[name="aantal"]');
+        if (quantityInput) {
+            quantityInput.value = 1;
+        }
+
         const removeButton = document.createElement('button');
         removeButton.textContent = '-';
+        removeButton.id = 'removePlantButton';
         removeButton.addEventListener('click', function () {
             bestelgegevens.removeChild(newPlantSection);
             addedSectionsCount--;
         });
-        newPlantSection.appendChild(removeButton);
+
+        const aantalDiv = newPlantSection.querySelector('#aantal');
+        aantalDiv.insertAdjacentElement('afterend', removeButton);
+
         bestelgegevens.appendChild(newPlantSection);
         addedSectionsCount++;
     });
@@ -30,6 +72,15 @@ document.addEventListener('DOMContentLoaded', function () {
             bestelgegevens.removeChild(section);
         });
 
+        const removeButtons = document.querySelectorAll('.added-section button');
+        removeButtons.forEach(function (button) {
+            button.parentNode.removeChild(button);
+        });
+
         addedSectionsCount = 0;
     });
 });
+
+
+
+

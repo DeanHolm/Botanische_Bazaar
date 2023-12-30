@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Stijl voor het woord */
+    .hover-word {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      margin: 100px;
+    }
+
+    /* Stijl voor de lijn */
+    .underline {
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #000; /* Kleur van de lijn */
+      bottom: -20px; /* Beginpositie van de lijn onder het woord */
+      transform: translateY(-10px); /* Verschuiving van 40 pixels naar boven */
+      transition: transform 0.3s ease-in-out; /* Voeg een vloeiende overgang toe aan de lijn */
+    }
+
+    .overline {
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #000;
+      top: -20px;
+      transform: translateY(10px);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .hover-word:hover .underline, .hover-word:hover .overline {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HTML-element met het woord en de lijn -->
+  <div class="hover-word">
+    HetWoord
+    <div class="underline"></div>
+    <div class="overline"></div>
+  </div>
+
+</body>
+</html>
+
