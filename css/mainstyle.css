@@ -86,7 +86,8 @@ nav a {
     text-transform: uppercase;
 }
 
-nav a.active, nav a.active:hover {
+nav a.active,
+nav a.active:hover {
     border-bottom: 2px solid #f2f0ef;
     border-top: 2px solid #f2f0ef;
 }
@@ -107,11 +108,28 @@ main {
     margin-bottom: 20px;
 }
 
+article.hoofdpagina {
+    display: grid;
+}
+
 article#portret.hoofdpagina {
     padding-top: 30px;
 }
 
-article.hoofdpagina p, #toelichting p{
+article#portret p,
+article#dankwoord p {
+    margin: 15px 0;
+}
+
+article.hoofdpagina p {
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    padding: 0 40px;
+    text-align: justify;
+    line-height: 1.5;
+    margin: 0;
+}
+
+#toelichting p {
     font-family: Montserrat, Arial, Helvetica, sans-serif;
     padding: 0 40px;
     text-align: justify;
@@ -128,10 +146,18 @@ article#portret img {
 }
 
 article.hoofdpagina img {
-    margin: 20px 40px 20px 40px;
+    margin: 0px 40px 20px 40px;
     width: 120px;
     height: 120px;
     border: 1px solid black;
+    border-radius: 10px;
+}
+
+article.hoofdpagina img#links {
+    float: left;
+}
+
+article.hoofdpagina img#rechts {
     float: right;
 }
 
@@ -139,6 +165,11 @@ article.hoofdpagina h1 {
     margin: 40px 20px 20px 40px;
     text-decoration: underline;
     font-size: 1.5em;
+}
+
+a#contact {
+    text-decoration: none;
+    color: #000;
 }
 
 hr {
@@ -226,7 +257,7 @@ footer {
 footer#footgrid {
     display: grid;
     height: auto;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto 175px;
     grid-template-areas: "text logo";
 }
 
@@ -239,7 +270,7 @@ footer img {
     grid-area: logo;
     width: 150px;
     align-self: center;
-    justify-self: center;
+    justify-self: end;
     margin-right: 20px;
 }
 
@@ -249,7 +280,7 @@ p#copyright {
     font-weight: bold;
     font-size: 1.5em;
     align-self: flex-start;
-    
+
 }
 
 p#disclaimer {
@@ -335,7 +366,7 @@ section#toelichting p span.sun {
     display: inline-block;
     margin-right: 15px;
     text-align: right;
-    text-shadow:#000 1px 1px 1px;
+    text-shadow: #000 1px 1px 1px;
 }
 
 section#toelichting p span.water {
@@ -350,13 +381,18 @@ section#toelichting p span.water {
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
-    justify-items: stretch;
+    align-items: stretch;
     margin-right: 40px;
 }
 
 main#bestelpagina {
     border: none;
     padding: 0;
+}
+
+#bestelformulier {
+    background-image: url('https://static.vecteezy.com/system/resources/previews/007/633/584/original/hand-drawn-vine-plant-in-light-green-on-a-dark-background-seamless-pattern-of-leaves-in-layers-with-shadows-in-a-floral-nature-design-free-vector.jpg');
+    background-size: cover;
 }
 
 form {
@@ -545,7 +581,7 @@ aside#filters {
     padding: 0 10px 10px 40px;
     font-family: Montserrat;
     font-size: 0.8em;
-    color:#ffffff;
+    color: #ffffff;
 }
 
 aside#filters h1 {
@@ -555,4 +591,11 @@ aside#filters h1 {
 aside#filters hr {
     margin: 30px 0;
     width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+    table {
+        overflow-x: scroll;
+        display: block;
+    }
 }
