@@ -134,8 +134,8 @@ main.review {
     display: flex;
     position: relative;
     top: 0;
-    right: 2000px;
-    animation: reviewslide 40s infinite;
+    right: 1600px;
+    animation: reviewslide 20s infinite;
 }
 
 .move article {
@@ -170,9 +170,9 @@ main.review {
     0% { right: 2000px; } 5% { right: 1600px; }
     20% { right: 1600px; } 25% { right: 1200px; }
     40% { right: 1200px; } 45% { right: 800px; }
-    60% { right: 800px; } 65% { right: 400px; }
-    80% {right: 400px; } 85% { right: 0px; }
-    99% {right: 2000px} 100% {right: 2000px}
+    60% {right: 800px; } 65% { right: 400px; }
+    80% {right: 400px; } 85% { right: 0; }
+    99.99% {right: 0px; } 100% { right: 2000px; }
 }
 
 .foto {
