@@ -16,15 +16,16 @@ body {
 #grid-container-home {
     display: grid;
     grid-template-columns: 1fr 1300px 1fr;
-    grid-template-rows: 200px 120px 1fr auto;
-    grid-template-areas: "header header header" "borderleft nav borderright" "borderleft main borderright" "foot foot foot";
+    grid-template-rows: 200px 120px auto 1fr auto;
+    grid-template-areas: "header header header" "borderleft nav borderright" "borderleft intro borderright"
+        "borderleft reviews borderright" "borderleft info borderright" "foot foot foot";
 }
 
-div#leftborders {
+#leftborders {
     grid-area: borderleft;
 }
 
-div#rightborders {
+#rightborders {
     grid-area: borderright;
 }
 
@@ -33,6 +34,7 @@ header {
     background-image: url('https://static.vecteezy.com/system/resources/previews/007/633/584/original/hand-drawn-vine-plant-in-light-green-on-a-dark-background-seamless-pattern-of-leaves-in-layers-with-shadows-in-a-floral-nature-design-free-vector.jpg');
     background-size: 75%;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 #company-name {
@@ -57,7 +59,7 @@ nav {
     margin: 20px 0;
     grid-area: nav;
     background-color: #6E8C56;
-    border-radius: 20px;
+    border-radius: 10px;
     text-align: center;
 }
 
@@ -97,12 +99,95 @@ nav a:hover {
     transition: background-position 0.5s ease;
 }
 
-main {
+#portret.hoofdpagina,
+div.info,
+main#webshop {
     padding: 0;
-    grid-area: main;
     border: 2px solid #6E8C56;
-    border-radius: 20px;
-    margin-bottom: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+main#portret {
+    grid-area: intro;
+}
+
+main.review {
+    grid-area: reviews;
+}
+
+.review-section {
+    grid-area: reviews;
+    margin: 40px 0;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 400px calc(100% - 400px);
+    grid-template-areas: "reviews afbeelding"
+}
+
+.review {
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.move {
+    display: flex;
+    position: relative;
+    top: 0;
+    right: 2000px;
+    animation: reviewslide 40s infinite;
+}
+
+.move article {
+    flex-shrink: 0;
+}
+
+.review article {
+    width: 320px;
+    height: auto;
+    border: 2px solid #6E8C56;
+    border-radius: 10px;
+    text-align: center;
+    padding: 0 18px 40px 18px;
+    margin: 0 40px 0 0;
+}
+
+.review h1 {
+    text-align: center;
+    margin: 0;
+    padding: 30px 0 10px 0;
+}
+
+.review p {
+    text-align: center;
+    color: yellow;
+    text-shadow: #000 1px 1px 1px;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+@keyframes reviewslide {
+    0% { right: 2000px; } 5% { right: 1600px; }
+    20% { right: 1600px; } 25% { right: 1200px; }
+    40% { right: 1200px; } 45% { right: 800px; }
+    60% { right: 800px; } 65% { right: 400px; }
+    80% {right: 400px; } 85% { right: 0px; }
+    99% {right: 2000px} 100% {right: 2000px}
+}
+
+.foto {
+    grid-area: afbeelding;
+    margin: 0 0 0 0px;
+    background-image: url('https://img.freepik.com/premium-photo/vertical-gardening-apartment-scandinavian-interior-style-panorama-generative-ai_699690-11870.jpg');
+    align-self: center;
+    height: 191px;
+    opacity: 0.8;
+    box-shadow: 3px 3px 5px darkgray;
+    border-radius: 10px;
+}
+
+main.info {
+    grid-area: info;
 }
 
 article.hoofdpagina {
@@ -120,7 +205,7 @@ article#dankwoord p {
 
 article.hoofdpagina p {
     font-family: Montserrat, Arial, Helvetica, sans-serif;
-    padding: 0 40px;
+    padding: 15px 40px;
     text-align: justify;
     line-height: 1.5;
     margin: 0;
@@ -305,7 +390,6 @@ p#disclaimer {
 
 .item h1 {
     font-size: 1.3em;
-    font-style: bold;
     margin: 0 15px 5px 15px;
     font-family: 'Playfair Display', serif;
 
@@ -393,7 +477,7 @@ main#bestelpagina {
 
 form {
     background-color: #6E8C56;
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     font-family: Montserrat, Arial, Helvetica, sans-serif;
@@ -418,6 +502,10 @@ legend {
     background-color: #475B2A;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 3px;
+}
+
+fieldset p {
+    line-height: 1.5;
 }
 
 input[type="text"],
@@ -456,7 +544,7 @@ input[type="number"] {
 #boodschap2 {
     display: block;
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 
 #personalia,
@@ -611,4 +699,3 @@ aside#filters hr {
         grid-template-areas: "text logo";
     }
 }
-

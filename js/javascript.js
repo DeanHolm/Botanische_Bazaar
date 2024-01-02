@@ -1,9 +1,9 @@
-// Deze code werd geschreven met behulp van AI omdat ik dit nog niet geleerd heb.
+// Deze JS-code werd geschreven met behulp van AI omdat ik dit nog niet geleerd heb.
 // Ik begrijp ze wel en heb ook de nodige aanpassingen moeten maken omdat niet alles klopte.
 // Het leek me gewoon een leuke toevoeging aan de website.
 
 
-//Om te kunnen filteren in de shop
+// Om te kunnen filteren in de shop.
 
 $(document).ready(function () {
     function updateDisplay() {
@@ -33,7 +33,7 @@ $(document).ready(function () {
 });
 
 
-// Om extra planten te kunnen toevoegen aan het bestelformulier
+// Om extra planten te kunnen toevoegen aan het bestelformulier of verwijderen.
 
 document.addEventListener('DOMContentLoaded', function () {
     const addButton = document.getElementById('addPlantButton');
