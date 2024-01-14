@@ -532,7 +532,6 @@ section#toelichting p span.water {
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: stretch;
-    /* margin-right: 40px; */
 }
 
 main#bestelpagina {
@@ -779,15 +778,16 @@ aside#filters hr {
         grid-template-areas: "reviews" "afbeelding";
     }
     .item {
-        margin: 0px 8px 10px 8px;
+        margin: 0px 16px 10px 0px;
         max-width: 120px;
+        justify-content: space-evenly;
     }  
     .item img {
         height: 100px;
         padding: 10px;
     }
     .item h1 {
-        font-size: 0.8em;
+        font-size: 0.7em;
         margin: 0px 10px 10px 10px;
     }   
     .item h2 {
@@ -844,6 +844,9 @@ aside#filters hr {
     }
     aside#filters hr {
         display: none;
+    }
+    div.chatbox img {
+        width: 50px;
     }
 }
 
