@@ -55,6 +55,76 @@ header {
     margin: 10px;
 }
 
+.not-active .underline {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #f2f0ef;
+    bottom: -13px;
+    animation: moveaway2 0.5s ease-in-out forwards;
+}
+
+.not-active .overline {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #f2f0ef;
+    top: -13px;
+    animation: moveaway1 0.5s ease-in-out forwards;
+}
+
+nav .not-active:hover .underline {
+    animation: movecloser2 0.5s ease-in-out forwards;
+}
+
+nav .not-active:hover .overline {
+    animation: movecloser1 0.5s ease-in-out forwards;
+}
+
+@keyframes movecloser1 {
+    from {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(10px);
+    }
+}
+
+@keyframes moveaway1 {
+    from {
+        opacity: 1;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(0);
+    }
+}
+
+@keyframes movecloser2 {
+    from {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes moveaway2 {
+    from {
+        opacity: 1;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(0);
+    }
+}
+
 nav {
     margin: 20px 0;
     grid-area: nav;
@@ -83,6 +153,9 @@ nav a {
     color: #f2f0ef;
     font-size: 30px;
     text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
 }
 
 nav a.active,
@@ -91,18 +164,10 @@ nav a.active:hover {
     border-top: 2px solid #f2f0ef;
 }
 
-nav a:hover {
-    background-position: -100% 0;
-    color: #6E8C56;
-    background-image: linear-gradient(to right, #6E8C56, #6E8C56, #f2f0ef, #f2f0ef);
-    background-size: 200% 100%;
-    transition: background-position 0.5s ease;
-}
-
 #portret.hoofdpagina,
 div.info,
 main#webshop {
-    padding: 0;
+    padding: 20px 0;
     border: 2px solid #6E8C56;
     border-radius: 10px;
     margin: 20px 0;
@@ -135,7 +200,7 @@ main.review {
     position: relative;
     top: 0;
     right: 1600px;
-    animation: reviewslide 20s infinite;
+    animation: reviewslide 25s infinite ease-out;
 }
 
 .move article {
@@ -149,7 +214,7 @@ main.review {
     border-radius: 10px;
     text-align: center;
     padding: 0 18px 40px 18px;
-    margin: 0 40px 0 0;
+    margin: 0 41px 0 0;
 }
 
 .review h1 {
@@ -195,17 +260,12 @@ article.hoofdpagina {
 }
 
 article#portret.hoofdpagina {
-    padding-top: 30px;
-}
-
-article#portret p,
-article#dankwoord p {
-    margin: 15px 0;
+    padding: 20px 0;
 }
 
 article.hoofdpagina p {
     font-family: Montserrat, Arial, Helvetica, sans-serif;
-    padding: 15px 40px;
+    padding: 10px 40px;
     text-align: justify;
     line-height: 1.5;
     margin: 0;
@@ -228,7 +288,7 @@ article#portret img {
 }
 
 article.hoofdpagina img {
-    margin: 0px 40px 20px 40px;
+    margin: 10px 40px 20px 40px;
     width: 120px;
     height: 120px;
     border: 1px solid black;
@@ -247,6 +307,12 @@ article.hoofdpagina h1 {
     margin: 40px 20px 20px 40px;
     text-decoration: underline;
     font-size: 1.5em;
+}
+
+article
+
+article#dankwoord p {
+    padding: 10px 40px;
 }
 
 a#contact {
@@ -338,8 +404,10 @@ footer#footgrid {
     display: grid;
     height: auto;
     justify-content: center;
+    grid-template-rows: auto;
     grid-template-columns: 1125px 175px;
-    grid-template-areas: "text logo";
+    grid-template-rows: auto;
+    grid-template-areas: "copyright logo" "disclaimer logo";
 }
 
 footer p {
@@ -348,7 +416,7 @@ footer p {
     padding-left: 20px;
 }
 
-footer img {
+footer a img {
     grid-area: logo;
     width: 150px;
     align-self: center;
@@ -356,18 +424,19 @@ footer img {
 }
 
 p#copyright {
-    grid-area: text;
+    grid-area: copyright;
     margin: 30px 0;
     font-weight: bold;
     font-size: 1.5em;
     align-self: flex-start;
-
+    display: block;
 }
 
 p#disclaimer {
-    grid-area: text;
+    grid-area: disclaimer;
     font-style: italic;
     align-self: flex-end;
+    display: block;
 }
 
 #webshop {
@@ -460,7 +529,7 @@ section#toelichting p span.water {
 #goederen {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: stretch;
     margin-right: 40px;
 }
@@ -644,7 +713,7 @@ p#belangrijk {
 }
 
 section#toelichting {
-    padding: 30px 0;
+    padding-bottom: 10px;
 }
 
 #filters {
@@ -677,6 +746,77 @@ aside#filters hr {
     width: 100%;
 }
 
+@media screen and (max-width: 900px) {
+    #grid-container-home {
+        display: grid;
+        grid-template-columns: 3% 94vw 3%;
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-areas: "header header header" "borderleft nav borderright" "borderleft main borderright" "foot foot foot";
+    }
+    #company-name {
+        font-size: 8vw;
+        letter-spacing: 5px;
+    }
+    #slogan {
+        font-size: 4vw;
+    }
+    nav ul{
+        display: block;
+    }
+    nav ul li {
+        width: 100%;
+        padding: 0;
+        margin: 10px 0;
+        font-size: 1em;
+    }
+    .review-section {
+        grid-area: reviews;
+        margin: 40px 0;
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-columns: 100%;
+        grid-template-areas: "reviews" "afbeelding";
+    }
+    .item {
+        margin: 0px 8px 10px 8px;
+        max-width: 120px;
+    }  
+    .item img {
+        height: 100px;
+        padding: 10px;
+    }
+    .item h1 {
+        font-size: 0.8em;
+        margin: 0px 10px 10px 10px;
+    }   
+    .item h2 {
+        font-size: 0.5em;      
+        margin: 0px 10px 10px 10px;
+    }
+    .item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+    .price {
+        top: 15px;
+        right: 15px;
+        font-size: 0.7em;
+    }
+    .sun, .water{
+        font-size: 0.4em;
+    }
+    .item hr {
+        margin: 0 10px;
+    }
+    section#grid {
+        grid-template-columns: 150px auto;
+    }
+    aside#filters {
+        font-size: 0.5em;
+    }
+}
+
 @media screen and (max-width: 1000px) {
     table {
         overflow-x: scroll;
@@ -684,18 +824,26 @@ aside#filters hr {
     }
 }
 
+@media screen and (max-width: 550px) {
+    article#portret img {
+        display: block;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 @media screen and (max-width: 1400px) {
     #grid-container-home {
         display: grid;
-        grid-template-columns: 3% 94% 3%;
-        grid-template-rows: 200px 120px 1fr auto;
+        grid-template-columns: 3% 94vw 3%;
+        grid-template-rows: auto auto 1fr auto;
         grid-template-areas: "header header header" "borderleft nav borderright" "borderleft main borderright" "foot foot foot";
     }
-
     footer#footgrid {
         display: grid;
         height: auto;
         grid-template-columns: calc(94% - 175px) 175px;
-        grid-template-areas: "text logo";
+        grid-template-areas: "copyright logo" "disclaimer logo";
     }
 }
