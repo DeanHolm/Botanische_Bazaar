@@ -23,10 +23,14 @@
         </header>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#" class="active">Shop</a></li>
-                <li><a href="bestellen.html">Bestellen</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html" class="not-active">Home<div class="underline"></div>
+                    <div class="overline"></div></a></li>
+                <li><a href="#" class="active">Shop<div class="underline"></div>
+                    <div class="overline"></div></a></li>
+                <li><a href="bestellen.html" class="not-active">Bestellen<div class="underline"></div>
+                    <div class="overline"></div></a></li>
+                <li><a href="contact.html" class="not-active">Contact<div class="underline"></div>
+                    <div class="overline"></div></a></li>
             </ul>
         </nav>
         <main id="webshop">
@@ -43,7 +47,7 @@
                 <section id="grid">
                     <aside id="filters">
                         <div id="filterlijst">
-                            <div>
+                            <div id="filter1">
                                 <h1>Plantencategorie</h1>
                                 <input type="checkbox" id="checkboxLZP" checked>
                                 <label for="checkboxLZP">Luchtzuiverende planten</label><br>
@@ -54,7 +58,7 @@
                                 <input type="checkbox" id="checkboxGBP" checked>
                                 <label for="checkboxGBP">Grote bladplanten</label><br>
                             </div><hr>
-                            <div>
+                            <div id="filter2">
                                 <h1>Lichtbehoefte</h1>
                                 <input type="radio" name="S" id="radioNone" checked>
                                 <label for="radioNone">Geen specifieke vereisten</label><br>
@@ -65,7 +69,7 @@
                                 <input type="radio" name="S" id="radioHS">
                                 <label for="radioHS">Veel</label><br>
                             </div><hr>
-                            <div>
+                            <div id="filter3">
                                 <h1>Waterbehoefte</h1>
                                 <input type="radio" name="W" id="radioNone" checked>
                                 <label for="radioNone">Geen specifieke vereisten</label><br>
