@@ -371,6 +371,7 @@ div.chatbox img {
     box-shadow: 0 0 10px rgba(67, 83, 52, 0.5);
     border-radius: 50%;
     transition: box-shadow 0.3s ease;
+    z-index: 2;
 }
 
 div.chatbox img:hover {
@@ -727,7 +728,7 @@ section#toelichting {
     background-color: #a3b57f;
     position: sticky;
     top: 50px;
-    z-index: 100;
+    z-index: 1;
 }
 
 aside#filters {
@@ -814,6 +815,35 @@ aside#filters hr {
     }
     aside#filters {
         font-size: 0.5em;
+    }
+    #grid {
+        display: block;
+    }
+    aside#filters {
+        padding: 0 40px 10px 40px;
+    }
+    #goederen {
+        padding: 20px 40px;
+    }
+    #filterlijst {
+        display: grid;
+        grid-template-areas: "f1 f2 f3";
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    #filterlijst h1 {
+        margin-left: 4px;
+    }
+    #filter1 {
+        grid-area: f1;
+    }
+    #filter2 {
+        grid-area: f2;
+    }
+    #filter3 {
+        grid-area: f3;
+    }
+    aside#filters hr {
+        display: none;
     }
 }
 
