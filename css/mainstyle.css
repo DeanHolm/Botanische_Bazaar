@@ -408,7 +408,7 @@ footer#footgrid {
     grid-template-rows: auto;
     grid-template-columns: 1125px 175px;
     grid-template-rows: auto;
-    grid-template-areas: "copyright logo" "disclaimer logo";
+    grid-template-areas: "copyright logo" "disclaimer disclaimer";
 }
 
 footer p {
