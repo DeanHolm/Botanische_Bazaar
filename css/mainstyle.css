@@ -532,7 +532,7 @@ section#toelichting p span.water {
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: stretch;
-    margin-right: 40px;
+    /* margin-right: 40px; */
 }
 
 main#bestelpagina {
