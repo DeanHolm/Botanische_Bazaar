@@ -537,6 +537,7 @@ section#toelichting p span.water {
 main#bestelpagina {
     border: none;
     padding: 0;
+    margin-bottom: 20px;
 }
 
 #bestelformulier {
@@ -544,7 +545,7 @@ main#bestelpagina {
     background-size: 75%;
 }
 
-form {
+#bestelpagina form {
     background-color: #6E8C56;
     border-radius: 10px;
     padding: 20px;
@@ -746,6 +747,78 @@ aside#filters hr {
     width: 100%;
 }
 
+#leftside {
+    border: 2px solid #6E8C56;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 0 20px 20px 20px;
+}
+
+#contact h1 {
+    font-size: 1.5em;
+    text-decoration: underline;
+    color: #6E8C56;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+#contact a {
+    text-decoration: none;
+    color: #000;
+}
+
+#contact ol {
+    padding-inline-start: 20px;
+}
+
+#contact form {
+    background-color: none;
+}
+
+#contact input[type="email"] {
+    padding: 10px 10px 10px 5px;
+    width: calc(80% - 150px);
+}
+
+#contact input[type="submit"] {
+    width: 120px;
+    margin-left: 20px;
+}
+
+#contact img {
+    width: 100px;
+    height: 100px;
+    margin: 0 20px 20px 0;
+    
+}
+
+#contact {
+    display: grid;
+    grid-template-areas: "l c r";
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+#l {
+    grid-area: l;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/007/633/584/original/hand-drawn-vine-plant-in-light-green-on-a-dark-background-seamless-pattern-of-leaves-in-layers-with-shadows-in-a-floral-nature-design-free-vector.jpg');
+    background-size: 150%;
+    margin: 0 20px 20px 0;
+    border-radius: 20px;
+}
+
+#r {
+    grid-area: r;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/007/633/584/original/hand-drawn-vine-plant-in-light-green-on-a-dark-background-seamless-pattern-of-leaves-in-layers-with-shadows-in-a-floral-nature-design-free-vector.jpg');
+    background-size: 150%;
+    margin: 0 0 20px 20px;
+    border-radius: 20px;
+}
+
+#c {
+    grid-area: c;
+    margin: 0 50px 20px 50px;
+}
+
 @media screen and (max-width: 900px) {
     #grid-container-home {
         display: grid;
@@ -877,6 +950,6 @@ aside#filters hr {
         display: grid;
         height: auto;
         grid-template-columns: calc(94% - 175px) 175px;
-        grid-template-areas: "copyright logo" "disclaimer logo";
+        grid-template-areas: "copyright logo" "disclaimer disclaimer";
     }
 }
