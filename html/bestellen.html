@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/mainstyle.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon/favicon-16x16.png">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="../js/javascript.js"></script>
+    <title>Botanische Bazaar - Webshop</title>
+</head>
+
+<body>
+    <div id="grid-container-home">
+        <div id="leftborders"></div>
+        <div id="rightborders"></div>
+        <header>
+            <h1 id="company-name">Botanische Bazaar</h1>
+            <h2 id="slogan"> Jouw bestemming voor weelderig groen &#127807;</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="not-active">Home<div class="underline"></div>
+                    <div class="overline"></div></a></li>
+                <li><a href="shop.html" class="not-active">Shop<div class="underline"></div>
+                    <div class="overline"></div></a></li>
+                <li><a href="#" class="active">Bestellen<div class="underline"></div>
+                    <div class="overline"></div></a></li>
+                <li><a href="contact.html" class="not-active">Contact<div class="underline"></div>
+                    <div class="overline"></div></a></li>
+            </ul>
+        </nav>
+        <main id="bestelpagina">
+            <form id="bestelformulier" method="post" action="https://jkorpela.fi/cgi-bin/echo.cgi" target="_blank"
+                autocomplete="on">
+                <fieldset title="Bestelformulier">
+                    <legend>Bestelformulier</legend>
+                    <p>Om een bestelling te plaatsen, kan u het onderstaande formulier invullen. Van zodra wij uw
+                        bestelling hebben ontvangen, nemen wij zo snel mogelijk
+                        met u contact op om afspraken te maken over de levering.</p>
+                    <p id="belangrijk"><strong>Velden met * vul je verplicht in.</strong></p>
+                    <h1>Persoonlijke gegevens</h1>
+                    <div id="personalia">
+                        <div id="geslacht">
+                            <label for="geslacht">Geslacht: </label>
+                            <input type="radio" name="geslacht" value="M" checked> M
+                            <input type="radio" name="geslacht" value="V"> V
+                            <input type="radio" name="geslacht" value="X"> X
+                        </div>
+                        <input type="text" name="voornaam" value="" placeholder="Voornaam*" required>
+                        <input type="text" name="achternaam" value="" placeholder="Achternaam*" required>
+                        <input type="tel" name="telefoonnummer" value="" placeholder="Telefoonr.*" required>
+                        <input type="email" name="emailadres" value="" placeholder="E-mailadres*" required>
+                    </div>
+                    <h1>Adresgegevens</h1>
+                    <div id="adresgegevens">
+                        <input type="text" name="straatnaam" value="" placeholder="Straatnaam*" required>
+                        <div id="nummers">
+                            <input type="text" name="huisnummer" value="" placeholder="Huisnr.*" required>
+                            <input type="text" name="busnummer" value="" placeholder="Busnr.">
+                        </div>
+                        <input type="text" name="gemeente" value="" placeholder="Gemeente*" required>
+                        <input type="text" name="postcode" value="" placeholder="Postcode*" required>
+                    </div>
+                    <h1>Bestelgegevens</h1>
+                    <p>U kan extra planten toevoegen door op de knop met het plussymbool te klikken.</p>
+                    <div id="bestelgegevens">
+                        <div class="plant-section" id="plant">
+                            <div class="plant">
+                                <label for="plantencategorie">Kies een plant:</label>
+                                <select name="plantencategorie">
+                                    <optgroup label="Luchtzuiverende planten">
+                                        <option value="Goudpalm">Goudpalm</option>
+                                        <option value="Sansevierie">Sansevieria</option>
+                                        <option value="Graslelie">Graslelie</option>
+                                        <option value="Lepelplant">Lepelplant</option>
+                                        <option value="Aloë Vera">Aloë Vera</option>
+                                        <option value="Rubberplant">Rubberplant</option>
+                                    </optgroup>
+                                    <optgroup label="Vetplanten">
+                                        <option value="Kalanchoë">Kalanchoë</option>
+                                        <option value="Echeveria">Echeveria</option>
+                                        <option value="Vetkruid">Vetkruid</option>
+                                        <option value="Jadeplant">Jadeplant</option>
+                                        <option value="Zebraplant">Zebraplant</option>
+                                        <option value="Sempervivum">Sempervivum</option>
+                                    </optgroup>
+                                    <optgroup label="Hangplanten">
+                                        <option value="Chenilleplant">Chenilleplant</option>
+                                        <option value="Erwtenplant">Erwtenplant</option>
+                                        <option value="Drakenklimop">Drakenklimop</option>
+                                        <option value="Krulvaren">Krulvaren</option>
+                                        <option value="Schaamrood">Schaamrood</option>
+                                        <option value="Vaderplant">Vaderplant</option>
+                                    </optgroup>
+                                    <optgroup label="Grote bladplanten">
+                                        <option value="Bananenplant">Bananenplant</option>
+                                        <option value="Monstera Deliciosa">Monstera Deliciosa</option>
+                                        <option value="Bird of Paradise">Bird of Paradise</option>
+                                        <option value="Vioolbladplant">Vioolbladplant</option>
+                                        <option value="Olifantsoor">Olifantsoor</option>
+                                        <option value="Kamerpalm">Kamerpalm</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div class="aantal" id="aantal">
+                                <label for="aantal">Aantal: </label>
+                                <input name="aantal" type="number" min="1" max="10" value="1">
+                            </div>
+                        </div>
+                        <button type="button" id="addPlantButton">+</button>
+                    </div>
+                    <label id="boodschap1" for="opmerkingen">Noteer hier uw eventuele opmerkingen en/of vragen:
+                    </label>
+                    <textarea id="boodschap2" name="opmerkingen" cols="20" rows="5"
+                        placeholder="Vul hier uw boodschap in."></textarea>
+                    <input type="submit" value="Bestelling plaatsen">
+                    <input type="reset" value="Reset">
+                </fieldset>
+            </form>
+        </main>
+        <div class="chatbox">
+            <button id="knop" title="Klik hier om een vraag te stellen. Wij antwoorden zo snel als mogelijk."><img
+                    src="../images/chatbox.png" alt="chatbox"></button>
+        </div>
+        <footer id="footgrid">
+            <div class="item1">
+                <p id="copyright">&copy; Holm Dean - WFB@Home - Howest</p>
+            </div>
+            <div class="item2">
+                <a href="../html/index.html"><img id="logo" src="../images/logo.png" alt="logo van het bedrijf"></a>
+            </div>
+            <div class="item3">
+                <p id="disclaimer">Dit is een virtuele oefenfirma. Informatie, transacties en goederen op deze website zijn
+                    fictief en hebben louter
+                    educatieve doeleinden.</p>
+            </div>
+    </footer>
+</body>
+
+</html>

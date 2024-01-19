@@ -81,6 +81,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
-
+// document.addEventListener('DOMContentLoaded', function () {
+//     var navigationBar = document.querySelector('.not-active .underline');
+//     navigationBar.style.animationPlayState = 'running';
+//     var navigationBar = document.querySelector('.not-active .overline');
+//     navigationBar.style.animationPlayState = 'running';
+// });
 
