@@ -339,11 +339,11 @@ article.hoofdpagina img {
     border-radius: 10px;
 }
 
-article.hoofdpagina img#links {
+article.hoofdpagina img.links {
     float: left;
 }
 
-article.hoofdpagina img#rechts {
+article.hoofdpagina img.rechts {
     float: right;
 }
 
